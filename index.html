@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Belflower | Fractional CFO for Growth-Stage Companies</title>
+    <meta name="description" content="Fractional CFO specializing in multi-location operations, financial modeling, and performance analytics for companies scaling from $10M to $150M.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --accent: #0066ff;
+            --accent-hover: #0052cc;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-600: #525252;
+            --gray-900: #171717;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background: white;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            background: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            color: var(--gray-900);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* Section Base */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Stats */
+        .stats {
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+        
+        .service-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        /* Results */
+        .results {
+            background: var(--gray-900);
+            color: white;
+        }
+        
+        .results .section-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .results .section-title {
+            color: white;
+        }
+        
+        .results .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .result-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+        
+        /* Resources */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .resource-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .resource-card:hover {
+            border-color: var(--accent);
+            background: white;
+        }
+        
+        .resource-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+            line-height: 1.3;
+        }
+        
+        .resource-card ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        .resource-card li {
+            margin-bottom: 0.4rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #0052cc 100%);
+            color: white;
+            text-align: center;
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            margin: 0 2rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .cta-section p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .cta-secondary:hover {
+            background: var(--gray-100);
+            transform: translateY(-1px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ben Belflower</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-label">FRACTIONAL CFO FOR GROWTH-STAGE COMPANIES</div>
+        <h1>Financial infrastructure that scales with you</h1>
+        <p>I help multi-location operators build the forecasting models, performance dashboards, and financial systems that turn operational complexity into competitive advantage.</p>
+        <a href="#contact" class="cta-primary">Schedule a Free Financial Quick Look</a>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Forecast accuracy improvement</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">States managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$100M+</div>
+                <div class="stat-label">Portfolio oversight</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years leadership experience</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <div class="section-label">What I Do</div>
+            <h2 class="section-title">Built for companies scaling from $10M to $150M</h2>
+            <p class="section-subtitle">You're beyond startup chaos but not yet corporate bureaucracy. You need CFO-level strategy without the full-time cost.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Financial Modeling & Scenario Planning</h3>
+                <p>Build sophisticated proforma models for expansion, acquisitions, or major contracts. Model best, base, and worst-case scenarios so you only expand when the worst case is survivable.</p>
+            </div>
+            <div class="service-card">
+                <h3>Multi-Location Performance Dashboards</h3>
+                <p>Design executive dashboards that consolidate location-level P&Ls, track operational KPIs (TPLH, SPLH, RevPAR), and give you real-time visibility across your portfolio.</p>
+            </div>
+            <div class="service-card">
+                <h3>Cash Flow Forecasting</h3>
+                <p>Build rolling 13-week cash flow forecasts that account for seasonality, timing of inventory, and prepaid expenses. Update weekly during high-risk periods.</p>
+            </div>
+            <div class="service-card">
+                <h3>Labor Analytics & Optimization</h3>
+                <p>Establish lead measures for frontline managers, model labor metrics to improve efficiency, and build frameworks that turn your biggest cost into a competitive advantage.</p>
+            </div>
+            <div class="service-card">
+                <h3>Finance Infrastructure Design</h3>
+                <p>Stand up scalable accounting systems, automate reporting processes, standardize chart of accounts, and implement internal controls that support growth.</p>
+            </div>
+            <div class="service-card">
+                <h3>Strategic Finance Leadership</h3>
+                <p>Partner with your executive team on ROI/IRR analysis, capital allocation, pricing strategy, and data-driven decision support across operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="results" id="results">
+        <div class="section-header">
+            <div class="section-label">Track Record</div>
+            <h2 class="section-title">Measurable impact across multi-state portfolios</h2>
+            <p class="section-subtitle">These aren't projections—they're results from leading finance operations at multi-state properties across the US</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-number">$30B</div>
+                <div class="result-description">Contract retained through 30-year proforma modeling in a highly competitive market</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">30%</div>
+                <div class="result-description">Improvement in forecast accuracy by refining methodology and integrating historical performance trends</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">16%</div>
+                <div class="result-description">Customer retention increase through deep-dive analysis of demand patterns and operational efficiency</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">75%</div>
+                <div class="result-description">Reduction in AP workload by leading centralized team transition and implementing automation</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">$1M</div>
+                <div class="result-description">Annual D&A expense reduction through asset study and fleet efficiency optimization</div>
+            </div>
+            <div class="result-card">
+                <div class="result-number">3%</div>
+                <div class="result-description">Labor efficiency improvement through frontline manager analytics and lead measure development</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources">
+        <div class="section-header">
+            <div class="section-label">Free Resources</div>
+            <h2 class="section-title">Financial frameworks you can use today</h2>
+            <p class="section-subtitle">Part of the Fractional CFO Content Library—practical guides for operators and founders</p>
+        </div>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <h3>5 Finance Mistakes That Sink Seasonal Operators</h3>
+                <ul>
+                    <li>Treating cash flow as a monthly problem instead of weekly</li>
+                    <li>Overestimating peak season revenue</li>
+                    <li>Underestimating off-season expenses</li>
+                    <li>Failing to run scenario models</li>
+                    <li>Ignoring timing of inventory and prepaid expenses</li>
+                </ul>
+            </div>
+            <div class="resource-card">
+                <h3>Simple Cash Flow Forecast for Seasonal Businesses</h3>
+                <ul>
+                    <li>Review 2-3 years of historical revenue to identify patterns</li>
+                    <li>Separate fixed from variable expenses</li>
+                    <li>Adjust for seasonal trends</li>
+                    <li>Build a rolling 13-week forecast</li>
+                    <li>Update weekly during high-risk periods</li>
+                </ul>
+            </div>
+            <div class="resource-card">
+                <h3>3 Scenarios Every Operator Should Model Before Expanding</h3>
+                <ul>
+                    <li>Best Case: Demand exceeds expectations</li>
+                    <li>Base Case: Performance matches forecast</li>
+                    <li>Worst Case: Revenue 20% below plan with higher costs</li>
+                    <li>Evaluate impact on cash, staffing, and margins</li>
+                    <li>Only expand when worst case is survivable</li>
+                </ul>
+            </div>
+            <div class="resource-card">
+                <h3>How I Consolidated 180 Profit Centers Into 14</h3>
+                <ul>
+                    <li>Identified reporting overload and decision fatigue</li>
+                    <li>Mapped profit centers into logical operating groups</li>
+                    <li>Standardized the chart of accounts</li>
+                    <li>Built KPI dashboards for each group</li>
+                    <li>Reduced reporting time by 40% while improving clarity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div style="padding: 5rem 0;">
+        <div class="cta-section" id="contact">
+            <h2>Let's identify 2-3 quick wins for your business</h2>
+            <p>Book a Free Financial Quick Look—30 minutes to spot opportunities you can act on immediately.</p>
+            <div class="cta-buttons">
+                <a href="mailto:benjbelflower@gmail.com?subject=Financial Quick Look Request" class="cta-secondary">Email Me</a>
+                <a href="https://www.linkedin.com/in/benbelflower" target="_blank" class="cta-secondary">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Ben Belflower</h4>
+                <p>Fractional CFO Services<br>Greater Phoenix Area, Arizona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    <a href="mailto:benjbelflower@gmail.com">benjbelflower@gmail.com</a><br>
+                    <a href="tel:775-580-5107">775-580-5107</a><br>
+                    <a href="https://www.linkedin.com/in/benbelflower" target="_blank">LinkedIn Profile</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p>
+                    Financial Modeling<br>
+                    Performance Dashboards<br>
+                    Cash Flow Forecasting<br>
+                    Multi-Location Finance
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ben Belflower. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
